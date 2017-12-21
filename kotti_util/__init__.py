@@ -22,8 +22,6 @@ def kotti_configure(settings):
     """
 
     settings['pyramid.includes'] += ' kotti_util'
-    settings['kotti.alembic_dirs'] += ' kotti_util:alembic'
-    settings['kotti.fanstatic.view_needed'] += ' kotti_util.fanstatic.css_and_js'
 
 
 def includeme(config):
@@ -35,7 +33,6 @@ def includeme(config):
     """
 
     config.add_translation_dirs('kotti_util:locale')
-    config.add_static_view('static-kotti_util', 'kotti_util:static')
     config.add_renderer(name='csv',
                         factory='kotti_util.renderers.CSVRenderer')
 
